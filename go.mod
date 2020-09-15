@@ -1,4 +1,4 @@
-module github.com/neglect-yp/ls-imported-proto
+module github.com/neglect-yp/ls-proto-deps
 
 go 1.15
 

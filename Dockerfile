@@ -14,4 +14,4 @@ RUN go build
 
 FROM alpine:3.12
 
-COPY --from=builder /go/src/app/ls-imported-proto .
+COPY --from=builder /go/src/app/ls-proto-deps .

@@ -1,1 +1,1 @@
-# ls-imported-proto
+# ls-proto-deps
