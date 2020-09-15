@@ -15,10 +15,12 @@ var (
 
 func main() {
 	flag.Parse()
-	filename := flag.Arg(0)
+	filenames := flag.Args()
 
-	if err := walk(filename); err != nil {
-		log.Fatal(err)
+	for _, filename := range filenames {
+		if err := walk(filename); err != nil {
+			log.Fatal(err)
+		}
 	}
 }
 
