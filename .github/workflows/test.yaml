@@ -30,7 +30,7 @@ jobs:
       env:
         GOROOT: ""
       with:
-        args: run --enable-all
+        args: run
 
     - name: Build
       run: go build -v ./...
