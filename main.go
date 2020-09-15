@@ -28,8 +28,6 @@ func walk(filename string) (err error) {
 	}
 	memo[filename] = struct{}{}
 
-	fmt.Println(filename)
-
 	reader, err := os.Open(filename)
 	if err != nil {
 		if _, ok := err.(*os.PathError); ok {
@@ -53,8 +51,10 @@ func walk(filename string) (err error) {
 	return nil
 }
 
-func handleImport(s *proto.Import) {
-	if err := walk(s.Filename); err != nil {
+func handleImport(i *proto.Import) {
+	fmt.Println(i.Filename)
+
+	if err := walk(i.Filename); err != nil {
 		log.Fatal(err)
 	}
 }
