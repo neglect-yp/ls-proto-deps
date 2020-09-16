@@ -5,11 +5,14 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"path"
 
 	"github.com/emicklei/proto"
 )
 
 var (
+	baseDir = flag.String("baseDir", "", "base directory of proto files")
+
 	memo = map[string]struct{}{}
 )
 
@@ -30,7 +33,7 @@ func walk(filename string) (err error) {
 	}
 	memo[filename] = struct{}{}
 
-	reader, err := os.Open(filename)
+	reader, err := os.Open(path.Join(*baseDir, filename))
 	if err != nil {
 		if _, ok := err.(*os.PathError); ok {
 			return nil
